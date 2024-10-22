@@ -1,0 +1,12 @@
+[Unit]
+Description=Flask-server for processing listener requests
+After=network.target
+
+[Service]
+User=scriptuser
+WorkingDirectory=/usr/local/bin
+ExecStart=/usr/bin/python3 /usr/local/bin/icecast_flask.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
